@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar bg-dark">
       <h1>
         <a href="index.html">
-          <i className="fas fa-code"></i> GithubCommunity
+          <i className="fas fa-users"></i> GithubCommunity
         </a>
       </h1>
       <ul>
