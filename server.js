@@ -1,6 +1,5 @@
 const express = require("express");
 const connectDB = require("./config/db");
-const Visits = require("./models/Visits");
 
 const app = express();
 
@@ -13,17 +12,8 @@ app.get("/", (req, res) => {
   res.send("API running");
 });
 
-app.get("/visits", async (req, res) => {
-  const visits = await Visits.findByIdAndUpdate(
-    "5eba6f87f1161f47e071c602",
-    { $inc: { counter: 1 } },
-    { new: true }
-  );
-
-  res.send({ visited: visits.counter });
-});
-
 // routes
+app.use("/api/visits", require("./routes/api/visits"));
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));

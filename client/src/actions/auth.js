@@ -11,19 +11,11 @@ import {
   CLEAR_PROFILE
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
+import visitsCounter from "./../utils/visitsCounter";
 
 // load user
 export const loadUser = () => async (dispatch) => {
-  if (localStorage.getItem("visitCounter")) {
-    console.log(
-      "landing page times visited:",
-      localStorage.getItem("visitCounter")
-    );
-  } else {
-    const visits = await axios.get("/visits");
-    console.log("landing page times visited:", visits.data.visited);
-    localStorage.setItem("visitCounter", visits.data.visited);
-  }
+  visitsCounter();
 
   if (localStorage.token) {
     setAuthToken(localStorage.token);
