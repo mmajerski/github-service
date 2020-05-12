@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Typical from "react-typical";
+import TypeEffect from "./TypeEffect";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -13,19 +13,7 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <Typical
-            className="x-large"
-            steps={[
-              "Hi Developers!",
-              2000,
-              "Welcome to",
-              2000,
-              "Github Community",
-              4000
-            ]}
-            loop={Infinity}
-            wrapper="h1"
-          />
+          <TypeEffect />
           <p className="lead">
             Create a developer profile/portfolio, share posts and get help from
             other developers
