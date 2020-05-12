@@ -1,15 +1,12 @@
 import axios from "axios";
 
 const visitsCounter = async () => {
-  if (localStorage.getItem("visitCounter")) {
-    console.log(
-      "landing page times visited:",
-      localStorage.getItem("visitCounter")
-    );
+  if (sessionStorage.getItem("visitCounter")) {
+    console.log("times visited:", sessionStorage.getItem("visitCounter"));
   } else {
     const visits = await axios.get("/api/visits");
-    console.log("landing page times visited:", visits.data.visited);
-    localStorage.setItem("visitCounter", visits.data.visited);
+    console.log("times visited:", visits.data.visited);
+    sessionStorage.setItem("visitCounter", visits.data.visited);
   }
 };
 

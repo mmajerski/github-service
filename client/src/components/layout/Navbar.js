@@ -43,6 +43,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <i className="fas fa-users"></i> GithubCommunity
         </Link>
       </h1>
+      {/* <ul>
+        <li>Times visited: {sessionStorage.getItem("visitCounter")}</li>
+      </ul> */}
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}

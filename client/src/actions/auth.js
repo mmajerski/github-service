@@ -11,12 +11,9 @@ import {
   CLEAR_PROFILE
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
-import visitsCounter from "./../utils/visitsCounter";
 
 // load user
 export const loadUser = () => async (dispatch) => {
-  visitsCounter();
-
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
@@ -91,7 +88,6 @@ export const login = (email, password) => async (dispatch) => {
 
 // logout / clear profile
 export const logout = () => (dispatch) => {
-  localStorage.removeItem("visitCounter");
   dispatch({ type: CLEAR_PROFILE });
   dispatch({ type: LOGOUT });
 };

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import TypeEffect from "./TypeEffect";
+import { visitCounter } from "./../../actions/visit";
 
-const Landing = ({ isAuthenticated }) => {
+const Landing = ({ visitCounter, isAuthenticated, timesVisited }) => {
+  useEffect(() => {
+    visitCounter();
+  }, []);
+
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
@@ -25,6 +30,7 @@ const Landing = ({ isAuthenticated }) => {
             <Link to="/login" className="btn btn-light">
               Login
             </Link>
+            <p className="lead">Total views: {timesVisited}</p>
           </div>
         </div>
       </div>
@@ -33,11 +39,13 @@ const Landing = ({ isAuthenticated }) => {
 };
 
 Landing.propTypes = {
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
+  timesVisited: PropTypes.number
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  timesVisited: state.visit.timesVisited
 });
 
-export default connect(mapStateToProps)(Landing);
+export default connect(mapStateToProps, { visitCounter })(Landing);
