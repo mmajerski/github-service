@@ -14,8 +14,16 @@ import setAuthToken from "../utils/setAuthToken";
 
 // load user
 export const loadUser = () => async (dispatch) => {
-  const visits = await axios.get("/visits");
-  console.log("landing page times visited: ", visits.data);
+  if (localStorage.getItem("visitCounter")) {
+    console.log(
+      "landing page times visited:",
+      localStorage.getItem("visitCounter")
+    );
+  } else {
+    const visits = await axios.get("/visits");
+    console.log("landing page times visited:", visits.data.visited);
+    localStorage.setItem("visitCounter", visits.data.visited);
+  }
 
   if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -91,6 +99,7 @@ export const login = (email, password) => async (dispatch) => {
 
 // logout / clear profile
 export const logout = () => (dispatch) => {
+  localStorage.removeItem("visitCounter");
   dispatch({ type: CLEAR_PROFILE });
   dispatch({ type: LOGOUT });
 };

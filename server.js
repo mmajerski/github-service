@@ -9,7 +9,7 @@ connectDB();
 // parsing to json
 app.use(express.json({ extended: false }));
 
-app.get("/", () => {
+app.get("/", (req, res) => {
   res.send("API running");
 });
 
