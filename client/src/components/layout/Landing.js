@@ -15,8 +15,8 @@ const Landing = ({ isAuthenticated }) => {
         <div className="landing-inner">
           <TypeEffect />
           <p className="lead">
-            Create a developer profile/portfolio, share posts and get help from
-            other developers
+            Join now and create developer profile, get help from other
+            developers by sharing posts and comments
           </p>
           <div className="buttons">
             <Link to="/register" className="btn btn-primary">
