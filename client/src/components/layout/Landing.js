@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import TypeEffect from "./TypeEffect";
+import GlowingInfo from "./GlowingInfo";
 import { visitCounter } from "./../../actions/visit";
 
 const Landing = ({ visitCounter, isAuthenticated, timesVisited }) => {
@@ -24,13 +25,16 @@ const Landing = ({ visitCounter, isAuthenticated, timesVisited }) => {
             developers by sharing posts and comments
           </p>
           <div className="buttons">
-            <Link to="/register" className="btn btn-primary">
+            <Link
+              to="/register"
+              className="btn btn-primary landing-page-button"
+            >
               Sign Up
             </Link>
-            <Link to="/login" className="btn btn-light">
+            <Link to="/login" className="btn btn-light landing-page-button">
               Login
             </Link>
-            <p className="lead">Total views: {timesVisited}</p>
+            <GlowingInfo timesVisited={timesVisited} />
           </div>
         </div>
       </div>

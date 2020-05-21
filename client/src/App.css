@@ -41,8 +41,6 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
-  margin-bottom: 3rem;
 }
 
 /* text styles*/
@@ -61,6 +59,7 @@ img {
 .lead {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .text-center {
@@ -69,6 +68,7 @@ img {
 
 .text-primary {
   color: var(--primary-color);
+  padding-top: 5rem;
 }
 
 .text-dark {
@@ -208,6 +208,11 @@ img {
 
 .btn:hover {
   opacity: 0.8;
+}
+
+.landing-page-button {
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
 .bg-light,
@@ -491,8 +496,12 @@ button {
 
 /* mobile styles */
 @media (max-width: 700px) {
-  .container {
-    margin-top: 8rem;
+  .text-primary {
+    padding-top: 12rem;
+  }
+
+  .landing-inner h1 {
+    padding-top: 12rem;
   }
 
   .hide-sm {
@@ -509,7 +518,7 @@ button {
   }
 
   .lead {
-    font-size: 1rem;
+    font-size: inherit;
   }
 
   /* navbar */
@@ -574,5 +583,41 @@ button {
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
+  }
+}
+
+.glowing-container {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.glowing-container .text,
+.glowing-container .data {
+  padding: 0.5rem;
+}
+
+.glowing-animation {
+  display: table-cell;
+  margin: 1rem;
+  padding: 0;
+  animation: glowing-anim 2s linear infinite;
+}
+
+@keyframes glowing-anim {
+  0%,
+  100% {
+    color: #00b3ff;
+    filter: blur(2px);
+    box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+      0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff, 0 0 300px #00b3ff,
+      0 0 400px #00b3ff;
+  }
+  5%,
+  95% {
+    color: #fff;
+    filter: blur(0px);
+    text-shadow: 0 0 10px none;
   }
 }
