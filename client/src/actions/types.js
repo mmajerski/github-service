@@ -15,4 +15,6 @@ export const CLEAR_PROFILE = "CLEAR_PROFILE";
 export const PROFILE_ERROR = "PROFILE_ERROR";
 export const RESET_PROFILE_LOADING = "RESET_PROFILE_LOADING";
 export const ACCOUNT_DELETED = "ACCOUNT_DELETED";
+export const GET_POSTS = "GET_POSTS";
+export const POST_ERROR = "POST_ERROR";
 export const GET_VISITED = "GET_VISITED";
