@@ -9,7 +9,7 @@ import { visitCounter } from "./../../actions/visit";
 const Landing = ({ visitCounter, isAuthenticated, timesVisited }) => {
   useEffect(() => {
     visitCounter();
-  }, []);
+  }, [visitCounter]);
 
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
