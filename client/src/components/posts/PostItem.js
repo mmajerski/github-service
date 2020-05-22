@@ -68,6 +68,10 @@ PostItem.defaultProps = {
   showActions: true
 };
 
+PostItem.defaultProps = {
+  showActions: true
+};
+
 PostItem.propTypes = {
   post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
