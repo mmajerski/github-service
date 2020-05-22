@@ -17,4 +17,5 @@ export const RESET_PROFILE_LOADING = "RESET_PROFILE_LOADING";
 export const ACCOUNT_DELETED = "ACCOUNT_DELETED";
 export const GET_POSTS = "GET_POSTS";
 export const POST_ERROR = "POST_ERROR";
+export const UPDATE_LIKES = "UPDATE_LIKES";
 export const GET_VISITED = "GET_VISITED";
