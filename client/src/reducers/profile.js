@@ -4,7 +4,8 @@ import {
   GET_REPOS,
   PROFILE_ERROR,
   CLEAR_PROFILE,
-  UPDATE_PROFILE
+  UPDATE_PROFILE,
+  RESET_PROFILE_LOADING
 } from "../actions/types";
 
 const initialState = {
@@ -34,6 +35,11 @@ export default function (state = initialState, action) {
         profile: null,
         repos: [],
         loading: false
+      };
+    case RESET_PROFILE_LOADING:
+      return {
+        ...state,
+        loading: true
       };
     default:
       return state;
