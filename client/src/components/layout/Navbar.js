@@ -8,6 +8,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
+        <a href="/api.html" target="_blank">
+          API
+        </a>
+      </li>
+      <li>
         <Link to="/profiles">Developers</Link>
       </li>
       <li>
@@ -30,6 +35,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <ul>
+      <li>
+        <a href="api.html" target="_blank">
+          API
+        </a>
+      </li>
       <li>
         <Link to="/profiles">Developers</Link>
       </li>
