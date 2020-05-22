@@ -555,6 +555,10 @@ button {
 
   /* profile page */
 
+  .on-profile-page {
+    display: block;
+  }
+
   .profile-top img,
   .profile img {
     width: 200px;
